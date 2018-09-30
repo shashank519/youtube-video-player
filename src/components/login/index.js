@@ -39,6 +39,8 @@ class Login extends Component {
       "userDetails",
       JSON.stringify({ ...user._profile, ...user._token })
     );
+    user._profile["accessToken"] = user._token.accessToken;
+    console.log("user._profile", user._profile);
     this.props.onUserLogin(user._profile, user._token);
   };
 
