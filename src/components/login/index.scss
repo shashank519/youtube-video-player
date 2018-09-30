@@ -1,0 +1,30 @@
+.Login {
+  align-items: center;
+  background-color: lightgray;
+  height: 100vh;
+
+  .login-card {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 350px;
+    height: 60%;
+    border-radius: 3px;
+    box-shadow: 0 0 12px 3px grey;
+
+    .login-form {
+      max-width: 300px;
+    }
+
+    .login-form-forgot {
+      float: right;
+    }
+
+    .login-form-button {
+      width: 100%;
+    }
+  }
+}
