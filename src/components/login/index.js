@@ -15,7 +15,7 @@ class Login extends Component {
       if (!err) {
         if (
           values.userName === "shashank@gmail.com" &&
-          values.password === "qw"
+          values.password === "shashank"
         ) {
           values = {
             ...values,
