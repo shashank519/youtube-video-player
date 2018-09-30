@@ -2,7 +2,6 @@ import loginConstants from "Constants/LoginConstants";
 
 const initialState = {
   isUserLoggedIn: false,
-  userName: "",
   user: {}
 };
 
@@ -12,8 +11,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isUserLoggedIn: true,
-        user: action.values,
-        userName: "Shashank Dave"
+        user: action.values
       };
     default:
       return state;

@@ -17,6 +17,15 @@ class Login extends Component {
           values.userName === "shashank@gmail.com" &&
           values.password === "qw"
         ) {
+          values = {
+            ...values,
+            firstName: "Shashank",
+            lastName: "Dave",
+            accessToken: "1q2w3e4r5t6y7u8i9o0p"
+          };
+          // const token = { accessToken: "1q2w3e4r5t6y7u8i9o0p" };
+
+          localStorage.setItem("userDetails", JSON.stringify(values));
           this.props.onUserLogin(values);
         } else {
           message.error("Invalid Login Credentials.");
@@ -26,7 +35,11 @@ class Login extends Component {
   };
 
   handleSocialLogin = user => {
-    console.log(user);
+    localStorage.setItem(
+      "userDetails",
+      JSON.stringify({ ...user._profile, ...user._token })
+    );
+    this.props.onUserLogin(user._profile, user._token);
   };
 
   handleSocialLoginFailure = err => {
