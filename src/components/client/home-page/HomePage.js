@@ -34,7 +34,7 @@ class HomePage extends Component {
                 <Col span={8} key={i}>
                   <Card
                     hoverable
-                    cover={<iframe src={video.url} height={300} width={400} />}
+                    cover={<iframe src={video.url} height={300} width={400} title={video.name}/>}
                   >
                     <Meta
                       title={video.name}
