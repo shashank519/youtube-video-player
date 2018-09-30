@@ -3,6 +3,8 @@ import { Card, Form, Icon, Input, Button, Checkbox, message } from "antd";
 import { connect } from "react-redux";
 import * as Actions from "Actions/LoginActions";
 
+import SocialButtons from "./social-buttons/SocialButtons";
+
 import "./index.scss";
 const FormItem = Form.Item;
 
@@ -21,6 +23,14 @@ class Login extends Component {
         }
       }
     });
+  };
+
+  handleSocialLogin = user => {
+    console.log(user);
+  };
+
+  handleSocialLoginFailure = err => {
+    console.error(err);
   };
 
   render() {
@@ -77,6 +87,23 @@ class Login extends Component {
               </Button>
             </FormItem>
           </Form>
+
+          <SocialButtons
+            provider="google"
+            appId="942375517894-47iiickf15ai5aeg0s3s0r0r4gn6ugp1.apps.googleusercontent.com"
+            onLoginSuccess={this.handleSocialLogin}
+            onLoginFailure={this.handleSocialLoginFailure}
+          >
+            Login With Google+
+          </SocialButtons>
+          <SocialButtons
+            provider="facebook"
+            appId="241278759880849"
+            onLoginSuccess={this.handleSocialLogin}
+            onLoginFailure={this.handleSocialLoginFailure}
+          >
+            Login With Facebook
+          </SocialButtons>
         </Card>
       </div>
     );
