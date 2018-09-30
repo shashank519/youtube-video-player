@@ -54,6 +54,9 @@ class Login extends Component {
     return (
       <div className="Login">
         <Card title="Login" bordered={false} className="login-card">
+          <div>
+            <span>shashank@gmail.com/shashank</span>
+          </div>
           <Form onSubmit={this.handleSubmit} className="login-form">
             <FormItem>
               {getFieldDecorator("userName", {
