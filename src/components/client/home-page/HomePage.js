@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Row, Col, Card, Tag, Input } from "antd";
+import { Row, Col, Card, Tag, Input, Spin } from "antd";
 import * as Actions from "Actions/HomePageActions";
 import "./HomePage.scss";
 
@@ -27,14 +27,24 @@ class HomePage extends Component {
           />
         </Row>
         <Row gutter={2}>
-          {this.props.fiteredVideoList &&
+          {this.props.isFetchingVideoList ? (
+            <Spin size="large" />
+          ) : (
+            this.props.fiteredVideoList &&
             this.props.fiteredVideoList.map((video, i) => {
               let tags = video.tag.split(",");
               return (
                 <Col span={8} key={i}>
                   <Card
                     hoverable
-                    cover={<iframe src={video.url} height={300} width={400} title={video.name}/>}
+                    cover={
+                      <iframe
+                        src={video.url}
+                        height={300}
+                        width={400}
+                        title={video.name}
+                      />
+                    }
                   >
                     <Meta
                       title={video.name}
@@ -47,7 +57,8 @@ class HomePage extends Component {
                   </Card>
                 </Col>
               );
-            })}
+            })
+          )}
         </Row>
       </div>
     );
