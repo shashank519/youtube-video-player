@@ -13,6 +13,8 @@ export default (state = initialState, action) => {
         isUserLoggedIn: true,
         user: action.values
       };
+    case loginConstants.logout_user:
+      return { ...state, ...initialState, isUserLoggedIn: false };
     default:
       return state;
   }
