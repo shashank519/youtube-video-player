@@ -108,6 +108,7 @@ class Login extends Component {
             appId="942375517894-47iiickf15ai5aeg0s3s0r0r4gn6ugp1.apps.googleusercontent.com"
             onLoginSuccess={this.handleSocialLogin}
             onLoginFailure={this.handleSocialLoginFailure}
+            className="google-plus-button"
           >
             Login With Google+
           </SocialButtons>
@@ -116,6 +117,7 @@ class Login extends Component {
             appId="241278759880849"
             onLoginSuccess={this.handleSocialLogin}
             onLoginFailure={this.handleSocialLoginFailure}
+            className="fb-button"
           >
             Login With Facebook
           </SocialButtons>

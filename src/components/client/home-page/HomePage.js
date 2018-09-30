@@ -18,8 +18,8 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div>
-        <Row>
+      <div className="home-page">
+        <Row className="filter-panel">
           <Search
             placeholder="input search text"
             onChange={this.searchVideoFilter}
